@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SECCA\\Documents\\C# API\\simple-pos-backend2\\simple-pos-backend2.csproj": {}
+    "C:\\Users\\SECCA\\Documents\\2024 Systems\\C# 2024\\SimplePOS (Back-end)\\simple-pos-backend2\\simple-pos-backend2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SECCA\\Documents\\C# API\\simple-pos-backend2\\simple-pos-backend2.csproj": {
+    "C:\\Users\\SECCA\\Documents\\2024 Systems\\C# 2024\\SimplePOS (Back-end)\\simple-pos-backend2\\simple-pos-backend2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SECCA\\Documents\\C# API\\simple-pos-backend2\\simple-pos-backend2.csproj",
+        "projectUniqueName": "C:\\Users\\SECCA\\Documents\\2024 Systems\\C# 2024\\SimplePOS (Back-end)\\simple-pos-backend2\\simple-pos-backend2.csproj",
         "projectName": "simple-pos-backend2",
-        "projectPath": "C:\\Users\\SECCA\\Documents\\C# API\\simple-pos-backend2\\simple-pos-backend2.csproj",
+        "projectPath": "C:\\Users\\SECCA\\Documents\\2024 Systems\\C# 2024\\SimplePOS (Back-end)\\simple-pos-backend2\\simple-pos-backend2.csproj",
         "packagesPath": "C:\\Users\\SECCA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SECCA\\Documents\\C# API\\simple-pos-backend2\\obj\\",
+        "outputPath": "C:\\Users\\SECCA\\Documents\\2024 Systems\\C# 2024\\SimplePOS (Back-end)\\simple-pos-backend2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SECCA\\AppData\\Roaming\\NuGet\\NuGet.Config",

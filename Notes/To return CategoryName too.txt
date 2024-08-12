@@ -1,0 +1,3 @@
+const string query = " SELECT p.*, c.CategoryName FROM Products p INNER JOIN Categories c ON p.CategoryId = c.CategoryId ORDER BY p.ProductId DESC";
+
+    // public string? CategoryName { get; set; }

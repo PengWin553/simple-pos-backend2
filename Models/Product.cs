@@ -7,4 +7,11 @@ public class Product
     public string? Unit { get; set; }
     public string? Sku { get; set; }
     public int? CategoryId { get; set; }
+    // public string? CategoryName { get; set; }
+
+    //  // Navigation property to link with Category
+    // public required Category Category { get; set; }
+
+    // // Navigation property to link with TransactionProduct
+    // public required ICollection<TransactionProduct> TransactionProducts { get; set; }
 }

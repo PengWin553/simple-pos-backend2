@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eG1xkAPufKw=",
+  "dgSpecHash": "vq2f3GnAGFI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\SECCA\\Documents\\C# API\\simple-pos-backend2\\simple-pos-backend2.csproj",
+  "projectFilePath": "C:\\Users\\SECCA\\Documents\\2024 Systems\\C# 2024\\SimplePOS (Back-end)\\simple-pos-backend2\\simple-pos-backend2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SECCA\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\SECCA\\.nuget\\packages\\microsoft.data.sqlite\\8.0.0\\microsoft.data.sqlite.8.0.0.nupkg.sha512",
