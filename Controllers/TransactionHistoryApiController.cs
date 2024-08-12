@@ -35,5 +35,13 @@ namespace simple_pos_backend2.Controllers
 
             return Ok(result);
         }
+
+        // create transaction history
+        [HttpPost("SaveTransaction")]
+        public async Task<IActionResult> SaveTransactionAsync(TransactionHistory transactionHistory){
+            const string query = "Insert into TransactionHistory (TransactionDate, TotalAmount) Values (@TransactionDate, @TotalAmount); Select * from TransactionHistory order by TransactionId desc Limit 1";
+            var result  = await _connection.QueryAsync<TransactionHistory>(query, transactionHistory);
+            return Ok(result);
+        }
     }
 }

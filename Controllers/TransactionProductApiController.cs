@@ -22,5 +22,13 @@ namespace simple_pos_backend2.Controllers
 
             return Ok(result);
         }
+
+        // create transaction product
+        [HttpPost("SaveTransactionProduct")]
+        public async Task<IActionResult> SaveTransactionProductAsync(TransactionProduct transactionProduct){
+            const string query = "Insert into TransactionProducts (TransactionId, ProductId, Quantity) Values (@TransactionId, @ProductId, @Quantity); Select * from TransactionProducts WHERE TransactionId = @TransactionId";
+            var result  = await _connection.QueryAsync<TransactionProduct>(query, transactionProduct);
+            return Ok(result);
+        }
     }
 }
