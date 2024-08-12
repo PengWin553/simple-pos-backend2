@@ -14,7 +14,7 @@ namespace simple_pos_backend2.Controllers
         [HttpGet("GetTransactionProducts")]
         public async Task<ActionResult<TransactionProduct>> GetTransactionProducts(int transactionId){
 
-            const string query = "Select * from TransactionProducts where TransactionId = @TransactionId";
+            const string query = "Select tp.TransactionProductId, tp.TransactionId, tp.ProductId, p.ProductName, p.Price, tp.Quantity from TransactionProducts tp Inner Join Products p on tp.ProductId = p.ProductId Where tp.TransactionId = @TransactionId";
             var result  = await _connection.QueryAsync<TransactionProduct>(query, new {TransactionId = transactionId});
             
             if(result == null)
@@ -25,9 +25,11 @@ namespace simple_pos_backend2.Controllers
 
         // create transaction product
         [HttpPost("SaveTransactionProduct")]
-        public async Task<IActionResult> SaveTransactionProductAsync(TransactionProduct transactionProduct){
-            const string query = "Insert into TransactionProducts (TransactionId, ProductId, Quantity) Values (@TransactionId, @ProductId, @Quantity); Select * from TransactionProducts WHERE TransactionId = @TransactionId";
-            var result  = await _connection.QueryAsync<TransactionProduct>(query, transactionProduct);
+        public async Task<IActionResult> SaveTransactionProductAsync(TransactionProduct transactionProduct)
+        {
+            const string query = "Insert into TransactionProducts (TransactionId, ProductId, Quantity) Values (@TransactionId, @ProductId, @Quantity); Select tp.TransactionProductId, tp.TransactionId, tp.ProductId, p.ProductName, p.Price, tp.Quantity from TransactionProducts tp Inner Join Products p on tp.ProductId = p.ProductId Where tp.TransactionId = @TransactionId";
+
+            var result = await _connection.QueryAsync<TransactionProduct>(query, transactionProduct);
             return Ok(result);
         }
     }
