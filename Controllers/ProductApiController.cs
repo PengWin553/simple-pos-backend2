@@ -65,6 +65,18 @@ namespace simple_pos_backend.Controllers
             return Ok(result);
         }
 
+        // Method to update stock for a product
+        [HttpPut("UpdateProductStock")]
+        public async Task<IActionResult> UpdateProductStockAsync(int id, int quantity){
+            const string query = "Update Products Set Stock = Stock - @Quantity Where ProductId = @ProductId";
+            var result = await _connection.ExecuteAsync(query, new { ProductId = id, Quantity = quantity });
+
+            if (result > 0)
+                return Ok("Stock updated successfully.");
+            else
+                return BadRequest("Failed to update stock.");
+        }
+
         // delete product
         [HttpDelete("DeleteProduct")]
         public async Task<IActionResult> DeleteProduct(int id){
