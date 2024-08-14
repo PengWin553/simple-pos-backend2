@@ -65,7 +65,7 @@ namespace simple_pos_backend.Controllers
             return Ok(result);
         }
 
-        // Method to update stock for a product
+        // Method to update stock for a product (handle them individually; utilized effectively by multiple server requests in frontend)
         [HttpPut("UpdateProductStock")]
         public async Task<IActionResult> UpdateProductStockAsync(int id, int quantity){
             const string query = "Update Products Set Stock = Stock - @Quantity Where ProductId = @ProductId";
@@ -75,6 +75,20 @@ namespace simple_pos_backend.Controllers
                 return Ok("Stock updated successfully.");
             else
                 return BadRequest("Failed to update stock.");
+        }
+
+        // gets list of products to update (handle the batch)
+        [HttpPut("UpdateProductStocks")]
+        public async Task<IActionResult> UpdateProductStocks([FromBody] List<ProductStockUpdate> updates)
+        {
+            const string query = "Update Products Set Stock = Stock - @Quantity Where ProductId = @ProductId";
+
+            foreach (var update in updates)
+            {
+                var result = await _connection.ExecuteAsync(query, new { ProductId = update.ProductId, Quantity = update.Quantity });
+            }
+
+            return Ok();
         }
 
         // delete product
